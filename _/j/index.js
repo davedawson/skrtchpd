@@ -3,23 +3,15 @@ function inputFocus(){
 }
 
 function autoSave(){
-	jQuery('form').sisyphus();
-}
-
- jQuery(document).ready(function() {
-	inputFocus();
-	autoSave();
-});
-
-
-/* 	jQuery('form').sisyphus({
-		timeout: 1,
+	$(function(){
+      $('textarea').uniform();
+      $('form').sisyphus({
+        timeout: 1,
         onSave: function() {
-          console.log('Saved!')
           // $.jnotify('Data are saved to Local Storage', 500);
           // kludge on Uniform.js bug
           setTimeout(function(){
-          //  $.uniform.update('textarea');
+            $.uniform.update('textarea');
           }, 200);
         },
         onRestore: function() {
@@ -36,6 +28,11 @@ function autoSave(){
             $.uniform.update('textarea');
           }, 500);
         }
+      });   
+    }); 
+}
 
-	});
-} */
+ jQuery(document).ready(function() {
+	inputFocus();
+	autoSave();
+});
