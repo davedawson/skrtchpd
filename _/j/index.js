@@ -28,11 +28,11 @@ function autoSave(){
             $.uniform.update('textarea');
           }, 500);
         }
-      });   
-    }); 
+      });
+    });
 }
 
  jQuery(document).ready(function() {
-	inputFocus();
-	autoSave();
+//	inputFocus();
+// 	autoSave();
 });

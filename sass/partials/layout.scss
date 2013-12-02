@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; }
-body {  background: #eee; font: normal 18px/23px "pt-sans", Georgia, 'Times New Roman', serif; }
+body {  background: #eee; font: normal 28px/38px $type-sans; }
 html, body, form, #preview { height: 100%; }
-textarea, #preview, .CodeMirror { background: #eee url(/_/i/scrtchpd-logo.png) center 1em no-repeat; color: #333; border: 0; padding: 2em 20%; width: 100%; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+textarea, #preview, .CodeMirror { background: $color-bg; color: #333; border: 0; padding: 2em 20%; width: 100%; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 textarea:focus { outline:0; outline:none; }
 textarea {
     opacity: 0.1;
@@ -15,12 +15,15 @@ textarea {
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   /* font-family: monospace; */
-
+  font: normal 28px/38px $type-sans;
   height: 100%;
+  height: auto;
+  color: $color-text;
 }
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
   overflow: auto;
+  overflow-x: auto; overflow-y: hidden;
 }
 
 /* PADDING */
@@ -30,6 +33,7 @@ textarea {
 }
 .CodeMirror pre {
   padding: 0 4px; /* Horizontal padding of content */
+  margin-bottom: 5px;
 }
 
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
@@ -72,6 +76,8 @@ textarea {
 
 .cm-tab { display: inline-block; }
 
+.cm-s-default .cm-formatting {opacity:.5;}
+
 /* DEFAULT THEME */
 
 .cm-s-default .cm-keyword {color: #708;}
@@ -92,7 +98,15 @@ textarea {
 .cm-s-default .cm-bracket {color: #997;}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #00c;}
-.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-header {
+    color: $color-text;
+    display: block;
+}
+.cm-header1 {
+  margin: 1em 0 0.8em;
+  font-size: 42px;
+  margin-left: -1em;
+}
 .cm-s-default .cm-quote {color: #090;}
 .cm-s-default .cm-hr {color: #999;}
 .cm-s-default .cm-link {color: #00c;}
@@ -119,8 +133,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   line-height: 1;
   position: relative;
   overflow: hidden;
-  background: white;
-  color: black;
+  background: $color-bg url(/_/i/scrtchpd-logo.png) center 1em no-repeat;
 }
 
 .CodeMirror-scroll {
@@ -188,6 +201,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 
 .CodeMirror-lines {
   cursor: text;
+  line-height: 38px;
 }
 .CodeMirror pre {
   /* Reset some styles that the rest of the page might have set */
