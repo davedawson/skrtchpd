@@ -67,29 +67,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 1, ../../../sass/partials/layout.scss */
+/* line 2, ../../../sass/partials/layout.scss */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 2, ../../../sass/partials/layout.scss */
+/* line 3, ../../../sass/partials/layout.scss */
 body {
   background: #eee;
   font: normal 28px/38px "pt-sans", Georgia, "Times New Roman", serif;
 }
 
-/* line 3, ../../../sass/partials/layout.scss */
+/* line 7, ../../../sass/partials/layout.scss */
 html, body, form, #preview {
   height: 100%;
 }
 
-/* line 4, ../../../sass/partials/layout.scss */
+/* line 10, ../../../sass/partials/layout.scss */
 textarea, #preview, .CodeMirror {
   background: #cccccc;
   color: #333;
   border: 0;
-  padding: 2em 20%;
+  padding: 0;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -97,13 +97,13 @@ textarea, #preview, .CodeMirror {
   box-sizing: border-box;
 }
 
-/* line 5, ../../../sass/partials/layout.scss */
+/* line 21, ../../../sass/partials/layout.scss */
 textarea:focus {
   outline: 0;
   outline: none;
 }
 
-/* line 6, ../../../sass/partials/layout.scss */
+/* line 25, ../../../sass/partials/layout.scss */
 textarea {
   opacity: 0.1;
   position: relative;
@@ -111,17 +111,18 @@ textarea {
 }
 
 /* BASICS */
-/* line 15, ../../../sass/partials/layout.scss */
+/* line 34, ../../../sass/partials/layout.scss */
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   /* font-family: monospace; */
   font: normal 28px/38px "pt-sans", Georgia, "Times New Roman", serif;
   height: 100%;
   height: auto;
+  padding: 2em 150px;
   color: #272f35;
 }
 
-/* line 23, ../../../sass/partials/layout.scss */
+/* line 43, ../../../sass/partials/layout.scss */
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
   overflow: auto;
@@ -130,34 +131,35 @@ textarea {
 }
 
 /* PADDING */
-/* line 31, ../../../sass/partials/layout.scss */
+/* line 51, ../../../sass/partials/layout.scss */
 .CodeMirror-lines {
   padding: 4px 0;
   /* Vertical padding around content */
 }
 
-/* line 34, ../../../sass/partials/layout.scss */
+/* line 54, ../../../sass/partials/layout.scss */
 .CodeMirror pre {
-  padding: 0 4px;
+  padding: 0 100px;
   /* Horizontal padding of content */
   margin-bottom: 5px;
+  position: relative;
 }
 
-/* line 39, ../../../sass/partials/layout.scss */
+/* line 60, ../../../sass/partials/layout.scss */
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
   background-color: white;
   /* The little square between H and V scrollbars */
 }
 
 /* GUTTER */
-/* line 45, ../../../sass/partials/layout.scss */
+/* line 66, ../../../sass/partials/layout.scss */
 .CodeMirror-gutters {
   border-right: 1px solid #ddd;
   background-color: #f7f7f7;
   white-space: nowrap;
 }
 
-/* line 51, ../../../sass/partials/layout.scss */
+/* line 72, ../../../sass/partials/layout.scss */
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
@@ -166,19 +168,19 @@ textarea {
 }
 
 /* CURSOR */
-/* line 60, ../../../sass/partials/layout.scss */
+/* line 81, ../../../sass/partials/layout.scss */
 .CodeMirror div.CodeMirror-cursor {
   border-left: 1px solid black;
   z-index: 3;
 }
 
 /* Shown when moving in bi-directional text */
-/* line 65, ../../../sass/partials/layout.scss */
+/* line 86, ../../../sass/partials/layout.scss */
 .CodeMirror div.CodeMirror-secondarycursor {
   border-left: 1px solid silver;
 }
 
-/* line 68, ../../../sass/partials/layout.scss */
+/* line 89, ../../../sass/partials/layout.scss */
 .CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
   width: auto;
   border: 0;
@@ -187,181 +189,242 @@ textarea {
 }
 
 /* Can style cursor different in overwrite (non-insert) mode */
-/* line 77, ../../../sass/partials/layout.scss */
+/* line 98, ../../../sass/partials/layout.scss */
 .cm-tab {
   display: inline-block;
 }
 
-/* line 79, ../../../sass/partials/layout.scss */
+/* line 100, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-formatting {
   opacity: .5;
 }
 
 /* DEFAULT THEME */
-/* line 83, ../../../sass/partials/layout.scss */
+/* line 106, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-keyword {
-  color: #708;
-}
-
-/* line 84, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-atom {
-  color: #219;
-}
-
-/* line 85, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-number {
-  color: #164;
-}
-
-/* line 86, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-def {
-  color: #00f;
-}
-
-/* line 87, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-variable {
-  color: black;
-}
-
-/* line 88, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-variable-2 {
-  color: #05a;
-}
-
-/* line 89, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-variable-3 {
-  color: #085;
-}
-
-/* line 90, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-property {
-  color: black;
-}
-
-/* line 91, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-operator {
-  color: black;
-}
-
-/* line 92, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-comment {
-  color: #a50;
-}
-
-/* line 93, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-string {
-  color: #a11;
-}
-
-/* line 94, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-string-2 {
-  color: #f50;
-}
-
-/* line 95, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-meta {
-  color: #555;
-}
-
-/* line 96, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-qualifier {
-  color: #555;
-}
-
-/* line 97, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-builtin {
-  color: #30a;
-}
-
-/* line 98, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-bracket {
-  color: #997;
-}
-
-/* line 99, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-tag {
-  color: #170;
-}
-
-/* line 100, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-attribute {
-  color: #00c;
-}
-
-/* line 101, ../../../sass/partials/layout.scss */
-.cm-s-default .cm-header {
   color: #272f35;
-  display: block;
 }
 
-/* line 105, ../../../sass/partials/layout.scss */
-.cm-header1 {
-  margin: 1em 0 0.8em;
-  font-size: 42px;
-  margin-left: -1em;
+/* line 107, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-atom {
+  color: #272f35;
+}
+
+/* line 108, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-number {
+  color: #272f35;
+}
+
+/* line 109, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-def {
+  color: #272f35;
 }
 
 /* line 110, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-variable {
+  color: #272f35;
+}
+
+/* line 111, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-variable-2 {
+  color: #272f35;
+}
+
+/* line 112, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-variable-3 {
+  color: #272f35;
+}
+
+/* line 113, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-property {
+  color: #272f35;
+}
+
+/* line 114, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-operator {
+  color: #272f35;
+}
+
+/* line 115, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-comment {
+  color: #272f35;
+}
+
+/* line 116, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-string {
+  color: #272f35;
+}
+
+/* line 117, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-string-2 {
+  color: #272f35;
+}
+
+/* line 118, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-meta {
+  color: #272f35;
+}
+
+/* line 119, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-qualifier {
+  color: #272f35;
+}
+
+/* line 120, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-builtin {
+  color: #272f35;
+}
+
+/* line 121, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-bracket {
+  color: #272f35;
+}
+
+/* line 122, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-tag {
+  color: #272f35;
+}
+
+/* line 123, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-attribute {
+  color: #272f35;
+}
+
+/* line 124, ../../../sass/partials/layout.scss */
+.cm-s-default .cm-header {
+  color: #272f35;
+}
+
+/* line 129, ../../../sass/partials/layout.scss */
+.cm-formatting-header {
+  font-size: 28px !important;
+  margin: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+/* line 144, ../../../sass/partials/layout.scss */
+.cm-header1 {
+  margin: 1em 0 0.8em;
+  font-size: 42px;
+}
+
+/* line 149, ../../../sass/partials/layout.scss */
+.cm-header2 {
+  margin: 1em 0 0.8em;
+  font-size: 36px;
+}
+
+/* line 154, ../../../sass/partials/layout.scss */
+.cm-header3 {
+  margin: 1em 0 0.8em;
+  font-size: 28px;
+}
+
+/* line 159, ../../../sass/partials/layout.scss */
+.cm-header4 {
+  margin: 1em 0 0.8em;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* line 166, ../../../sass/partials/layout.scss */
+.cm-header5 {
+  margin: 1em 0 0.8em;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* line 173, ../../../sass/partials/layout.scss */
+.cm-header6 {
+  margin: 1em 0 0.8em;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* line 182, ../../../sass/partials/layout.scss */
+.cm-formatting-link {
+  text-decoration: none !important;
+}
+
+/* line 188, ../../../sass/partials/layout.scss */
+.cm-formatting-quote {
+  border: 0 !important;
+}
+
+/* line 191, ../../../sass/partials/layout.scss */
+.cm-atom {
+  display: inline-block;
+  padding-left: 15%;
+  border-left: 1px solid rgba(39, 47, 53, 0.2);
+  font-size: 20px !important;
+  line-height: 24px !important;
+  color: #3d4952 !important;
+}
+
+/* line 199, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-quote {
   color: #090;
 }
 
-/* line 111, ../../../sass/partials/layout.scss */
+/* line 200, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-hr {
   color: #999;
 }
 
-/* line 112, ../../../sass/partials/layout.scss */
+/* line 201, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-link {
-  color: #00c;
+  color: black;
 }
 
-/* line 114, ../../../sass/partials/layout.scss */
+/* line 203, ../../../sass/partials/layout.scss */
 .cm-negative {
   color: #d44;
 }
 
-/* line 115, ../../../sass/partials/layout.scss */
+/* line 204, ../../../sass/partials/layout.scss */
 .cm-positive {
   color: #292;
 }
 
-/* line 116, ../../../sass/partials/layout.scss */
+/* line 205, ../../../sass/partials/layout.scss */
 .cm-header, .cm-strong {
   font-weight: bold;
 }
 
-/* line 117, ../../../sass/partials/layout.scss */
+/* line 206, ../../../sass/partials/layout.scss */
 .cm-em {
   font-style: italic;
 }
 
-/* line 118, ../../../sass/partials/layout.scss */
+/* line 207, ../../../sass/partials/layout.scss */
 .cm-link {
   text-decoration: underline;
 }
 
-/* line 120, ../../../sass/partials/layout.scss */
+/* line 209, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-error {
   color: #f00;
 }
 
-/* line 121, ../../../sass/partials/layout.scss */
+/* line 210, ../../../sass/partials/layout.scss */
 .cm-invalidchar {
   color: #f00;
 }
 
-/* line 123, ../../../sass/partials/layout.scss */
+/* line 212, ../../../sass/partials/layout.scss */
 div.CodeMirror span.CodeMirror-matchingbracket {
   color: #0f0;
 }
 
-/* line 124, ../../../sass/partials/layout.scss */
+/* line 213, ../../../sass/partials/layout.scss */
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: #f22;
 }
 
-/* line 125, ../../../sass/partials/layout.scss */
+/* line 214, ../../../sass/partials/layout.scss */
 .CodeMirror-activeline-background {
   background: #e8f2ff;
 }
@@ -369,7 +432,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* STOP */
 /* The rest of this file contains styles related to the mechanics of
    the editor. You probably shouldn't touch them. */
-/* line 132, ../../../sass/partials/layout.scss */
+/* line 221, ../../../sass/partials/layout.scss */
 .CodeMirror {
   line-height: 1;
   position: relative;
@@ -377,7 +440,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   background: #cccccc url(/_/i/scrtchpd-logo.png) center 1em no-repeat;
 }
 
-/* line 139, ../../../sass/partials/layout.scss */
+/* line 228, ../../../sass/partials/layout.scss */
 .CodeMirror-scroll {
   /* 30px is the magic margin used to hide the element's real scrollbars */
   /* See overflow: hidden in .CodeMirror */
@@ -393,7 +456,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   box-sizing: content-box;
 }
 
-/* line 150, ../../../sass/partials/layout.scss */
+/* line 239, ../../../sass/partials/layout.scss */
 .CodeMirror-sizer {
   position: relative;
 }
@@ -401,14 +464,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* The fake, visible scrollbars. Used to force redraw during scrolling
    before actuall scrolling happens, thus preventing shaking and
    flickering artifacts. */
-/* line 157, ../../../sass/partials/layout.scss */
+/* line 246, ../../../sass/partials/layout.scss */
 .CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
   position: absolute;
   z-index: 6;
   display: none;
 }
 
-/* line 162, ../../../sass/partials/layout.scss */
+/* line 251, ../../../sass/partials/layout.scss */
 .CodeMirror-vscrollbar {
   right: 0;
   top: 0;
@@ -416,7 +479,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-y: scroll;
 }
 
-/* line 167, ../../../sass/partials/layout.scss */
+/* line 256, ../../../sass/partials/layout.scss */
 .CodeMirror-hscrollbar {
   bottom: 0;
   left: 0;
@@ -424,19 +487,19 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-x: scroll;
 }
 
-/* line 172, ../../../sass/partials/layout.scss */
+/* line 261, ../../../sass/partials/layout.scss */
 .CodeMirror-scrollbar-filler {
   right: 0;
   bottom: 0;
 }
 
-/* line 175, ../../../sass/partials/layout.scss */
+/* line 264, ../../../sass/partials/layout.scss */
 .CodeMirror-gutter-filler {
   left: 0;
   bottom: 0;
 }
 
-/* line 179, ../../../sass/partials/layout.scss */
+/* line 268, ../../../sass/partials/layout.scss */
 .CodeMirror-gutters {
   position: absolute;
   left: 0;
@@ -445,7 +508,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 3;
 }
 
-/* line 184, ../../../sass/partials/layout.scss */
+/* line 273, ../../../sass/partials/layout.scss */
 .CodeMirror-gutter {
   white-space: normal;
   height: 100%;
@@ -459,20 +522,20 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   *display: inline;
 }
 
-/* line 196, ../../../sass/partials/layout.scss */
+/* line 285, ../../../sass/partials/layout.scss */
 .CodeMirror-gutter-elt {
   position: absolute;
   cursor: default;
   z-index: 4;
 }
 
-/* line 202, ../../../sass/partials/layout.scss */
+/* line 291, ../../../sass/partials/layout.scss */
 .CodeMirror-lines {
   cursor: text;
   line-height: 38px;
 }
 
-/* line 206, ../../../sass/partials/layout.scss */
+/* line 295, ../../../sass/partials/layout.scss */
 .CodeMirror pre {
   /* Reset some styles that the rest of the page might have set */
   -moz-border-radius: 0;
@@ -492,14 +555,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow: visible;
 }
 
-/* line 222, ../../../sass/partials/layout.scss */
+/* line 311, ../../../sass/partials/layout.scss */
 .CodeMirror-wrap pre {
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: normal;
 }
 
-/* line 227, ../../../sass/partials/layout.scss */
+/* line 316, ../../../sass/partials/layout.scss */
 .CodeMirror-code pre {
   border-right: 30px solid transparent;
   width: -webkit-fit-content;
@@ -507,13 +570,13 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: fit-content;
 }
 
-/* line 233, ../../../sass/partials/layout.scss */
+/* line 322, ../../../sass/partials/layout.scss */
 .CodeMirror-wrap .CodeMirror-code pre {
   border-right: none;
   width: auto;
 }
 
-/* line 237, ../../../sass/partials/layout.scss */
+/* line 326, ../../../sass/partials/layout.scss */
 .CodeMirror-linebackground {
   position: absolute;
   left: 0;
@@ -523,19 +586,19 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 0;
 }
 
-/* line 243, ../../../sass/partials/layout.scss */
+/* line 332, ../../../sass/partials/layout.scss */
 .CodeMirror-linewidget {
   position: relative;
   z-index: 2;
   overflow: auto;
 }
 
-/* line 251, ../../../sass/partials/layout.scss */
+/* line 340, ../../../sass/partials/layout.scss */
 .CodeMirror-wrap .CodeMirror-scroll {
   overflow-x: hidden;
 }
 
-/* line 255, ../../../sass/partials/layout.scss */
+/* line 344, ../../../sass/partials/layout.scss */
 .CodeMirror-measure {
   position: absolute;
   width: 100%;
@@ -544,12 +607,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   visibility: hidden;
 }
 
-/* line 262, ../../../sass/partials/layout.scss */
+/* line 351, ../../../sass/partials/layout.scss */
 .CodeMirror-measure pre {
   position: static;
 }
 
-/* line 264, ../../../sass/partials/layout.scss */
+/* line 353, ../../../sass/partials/layout.scss */
 .CodeMirror div.CodeMirror-cursor {
   position: absolute;
   visibility: hidden;
@@ -557,36 +620,36 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: 0;
 }
 
-/* line 270, ../../../sass/partials/layout.scss */
+/* line 359, ../../../sass/partials/layout.scss */
 .CodeMirror-focused div.CodeMirror-cursor {
   visibility: visible;
 }
 
-/* line 274, ../../../sass/partials/layout.scss */
+/* line 363, ../../../sass/partials/layout.scss */
 .CodeMirror-selected {
   background: #d9d9d9;
 }
 
-/* line 275, ../../../sass/partials/layout.scss */
+/* line 364, ../../../sass/partials/layout.scss */
 .CodeMirror-focused .CodeMirror-selected {
   background: #d7d4f0;
 }
 
-/* line 277, ../../../sass/partials/layout.scss */
+/* line 366, ../../../sass/partials/layout.scss */
 .cm-searching {
   background: #ffa;
   background: rgba(255, 255, 0, 0.4);
 }
 
 /* IE7 hack to prevent it from returning funny offsetTops on the spans */
-/* line 283, ../../../sass/partials/layout.scss */
+/* line 372, ../../../sass/partials/layout.scss */
 .CodeMirror span {
   *vertical-align: text-bottom;
 }
 
 @media print {
   /* Hide the cursor when printing */
-  /* line 287, ../../../sass/partials/layout.scss */
+  /* line 376, ../../../sass/partials/layout.scss */
   .CodeMirror div.CodeMirror-cursor {
     visibility: hidden;
   }
@@ -596,12 +659,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
 
 */
-/* line 7, ../../../sass/partials/type.scss */
-pre code {
-  display: block;
-  padding: 0.5em;
-}
-
 /* line 17, ../../../sass/partials/type.scss */
 pre code,
 pre .subst,

@@ -15,7 +15,7 @@
 		<link href="_/c/default.css" rel="stylesheet">
 		<!-- <link href="_/c/codemirror.css" rel="stylesheet"> -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script src="_/j/plugins.js"></script>
+		<script src="_/j/plugins-wide.js"></script>
 		<script src="_/j/index.js"></script>
 		<script src="_/j/highlight.pack.js"></script>
 		<script src="_/j/codemirror.js"></script>
@@ -29,8 +29,10 @@
 	</head>
 
 	<body>
-
-		<textarea id="code" name="code">Type **Markdown** here.</textarea>
+        <!-- <a href="#" class="save">Save</a> -->
+        <form>
+    		<textarea id="text-editor" name="editor"></textarea>
+        </form>
     <div id="preview"> </div>
 		<script type="text/javascript">
 
@@ -45,22 +47,5 @@
 		  })();
 
 		</script>
-		    <script>
-      CodeMirror.commands.autocomplete = function(cm) {
-        CodeMirror.showHint(cm, CodeMirror.hint.javascript);
-      };
-
-      // Waiting on the issue to format these individually: https://github.com/marijnh/CodeMirror/issues/1919
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        mode: {
-			name: "markdown",
-			highlightFormatting: true
-		},
-        lineNumbers: false,
-        lineWrapping: true,
-        autofocus: true,
-        extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
-      });
-    </script>
 	</body>
 </html>

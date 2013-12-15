@@ -1,8 +1,27 @@
+@import "partials/defaults";
 * { margin: 0; padding: 0; }
-body {  background: #eee; font: normal 28px/38px $type-sans; }
-html, body, form, #preview { height: 100%; }
-textarea, #preview, .CodeMirror { background: $color-bg; color: #333; border: 0; padding: 2em 20%; width: 100%; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-textarea:focus { outline:0; outline:none; }
+body {
+  background: #eee;
+  font: normal 28px/38px $type-sans;
+}
+html, body, form, #preview {
+  height: 100%;
+}
+textarea, #preview, .CodeMirror {
+  background: $color-bg;
+  color: #333;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+textarea:focus {
+  outline:0;
+  outline:none;
+}
 textarea {
     opacity: 0.1;
     position: relative;
@@ -18,6 +37,7 @@ textarea {
   font: normal 28px/38px $type-sans;
   height: 100%;
   height: auto;
+  padding: 2em 150px;
   color: $color-text;
 }
 .CodeMirror-scroll {
@@ -32,8 +52,9 @@ textarea {
   padding: 4px 0; /* Vertical padding around content */
 }
 .CodeMirror pre {
-  padding: 0 4px; /* Horizontal padding of content */
+  padding: 0 100px; /* Horizontal padding of content */
   margin-bottom: 5px;
+  position: relative;
 }
 
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
@@ -47,7 +68,7 @@ textarea {
   background-color: #f7f7f7;
   white-space: nowrap;
 }
-.CodeMirror-linenumbers {}
+.CodeMirror-linenumbers { }
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
@@ -76,40 +97,108 @@ textarea {
 
 .cm-tab { display: inline-block; }
 
-.cm-s-default .cm-formatting {opacity:.5;}
+.cm-s-default .cm-formatting {
+  opacity:.5;
+}
 
 /* DEFAULT THEME */
 
-.cm-s-default .cm-keyword {color: #708;}
-.cm-s-default .cm-atom {color: #219;}
-.cm-s-default .cm-number {color: #164;}
-.cm-s-default .cm-def {color: #00f;}
-.cm-s-default .cm-variable {color: black;}
-.cm-s-default .cm-variable-2 {color: #05a;}
-.cm-s-default .cm-variable-3 {color: #085;}
-.cm-s-default .cm-property {color: black;}
-.cm-s-default .cm-operator {color: black;}
-.cm-s-default .cm-comment {color: #a50;}
-.cm-s-default .cm-string {color: #a11;}
-.cm-s-default .cm-string-2 {color: #f50;}
-.cm-s-default .cm-meta {color: #555;}
-.cm-s-default .cm-qualifier {color: #555;}
-.cm-s-default .cm-builtin {color: #30a;}
-.cm-s-default .cm-bracket {color: #997;}
-.cm-s-default .cm-tag {color: #170;}
-.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-keyword {color: $color-text;}
+.cm-s-default .cm-atom {color: $color-text;}
+.cm-s-default .cm-number {color: $color-text;}
+.cm-s-default .cm-def {color: $color-text;}
+.cm-s-default .cm-variable {color: $color-text;}
+.cm-s-default .cm-variable-2 {color: $color-text;}
+.cm-s-default .cm-variable-3 {color: $color-text;}
+.cm-s-default .cm-property {color: $color-text;}
+.cm-s-default .cm-operator {color: $color-text;}
+.cm-s-default .cm-comment {color: $color-text;}
+.cm-s-default .cm-string {color: $color-text;}
+.cm-s-default .cm-string-2 {color: $color-text;}
+.cm-s-default .cm-meta {color: $color-text;}
+.cm-s-default .cm-qualifier {color: $color-text;}
+.cm-s-default .cm-builtin {color: $color-text;}
+.cm-s-default .cm-bracket {color: $color-text;}
+.cm-s-default .cm-tag {color: $color-text;}
+.cm-s-default .cm-attribute {color: $color-text;}
 .cm-s-default .cm-header {
     color: $color-text;
-    display: block;
+    // display: inline-block;
+}
+// General header formatting
+.cm-formatting-header {
+  font-size: 28px !important;
+  // width: 150px;
+  // text-align: right;
+  // float: left;
+  // margin-left: 150px;
+  // display: inline;
+  // width: 100px;
+  // position: absolute;
+  // left: -10px;
+  // top: 0;
+  margin: 0 !important;
+  letter-spacing: 0 !important;
+  // margin-right: -100px !important;
 }
 .cm-header1 {
   margin: 1em 0 0.8em;
   font-size: 42px;
-  margin-left: -1em;
+  // margin-left: -1em;
+}
+.cm-header2 {
+  margin: 1em 0 0.8em;
+  font-size: 36px;
+  // margin-left: -1em;
+}
+.cm-header3 {
+  margin: 1em 0 0.8em;
+  font-size: 28px;
+  // margin-left: -1em;
+}
+.cm-header4 {
+  margin: 1em 0 0.8em;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  // margin-left: -1em;
+}
+.cm-header5 {
+  margin: 1em 0 0.8em;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  // margin-left: -1em;
+}
+.cm-header6 {
+  margin: 1em 0 0.8em;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  // margin-left: -1em;
+}
+
+// Link formatting
+.cm-formatting-link {
+  // No underline on the brackets
+  text-decoration: none !important;
+}
+
+// Quotes
+.cm-formatting-quote {
+  border: 0 !important;
+}
+.cm-atom {
+  display: inline-block;
+  padding-left: 15%;
+  border-left: 1px solid transparentize($color-text, 0.8);
+  font-size: 20px !important;
+  line-height: 24px !important;
+  color: lighten($color-text, 10%) !important;
 }
 .cm-s-default .cm-quote {color: #090;}
 .cm-s-default .cm-hr {color: #999;}
-.cm-s-default .cm-link {color: #00c;}
+.cm-s-default .cm-link {color: darken($color-text, 80%);}
 
 .cm-negative {color: #d44;}
 .cm-positive {color: #292;}
