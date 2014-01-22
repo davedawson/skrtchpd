@@ -1,3 +1,47 @@
+body {
+  font-size: 16pz;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+a {
+    text-decoration: none;
+    font-size: 16px;
+    color: $color-text;
+    font-weight: bold;
+}
+ul, ol {
+  margin: 20px 0;
+  li {
+    list-style-type: disc;
+    margin-left: 30px;
+  }
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+
+blockquote {
+  background: transparentize($color-black, 0.97);
+  padding: 25px;
+  span {
+    opacity: 0.3;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
 /*
 
 Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>

@@ -10,30 +10,106 @@
 <html>
 	<head>
 		<title>scrtchpd</title>
+		<meta charset='UTF-8'>
+		<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
 		<link href="/_/i/favicon.ico" rel="icon" type="image/x-icon" />
 		<link href="_/c/styles/screen.css" rel="stylesheet">
 		<link href="_/c/default.css" rel="stylesheet">
 		<!-- <link href="_/c/codemirror.css" rel="stylesheet"> -->
+		<meta name="description" content="Write something. Then throw it away.">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script src="_/j/plugins-wide.js"></script>
-		<script src="_/j/index.js"></script>
-		<script src="_/j/highlight.pack.js"></script>
-		<script src="_/j/codemirror.js"></script>
-		<script src="_/j/show-hint.js"></script>
-		<script src="_/j/javascript-hint.js"></script>
-
-		<script src="_/j/markdown.js"></script>
-		<script type="text/javascript" src="//use.typekit.net/jco5ygc.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        <meta name="description" content="Write something. Then throw it away.">
+		<script>
+		$(document).ready(function(){
+	        window.location = '/#!';
+		    console.log('test');
+		});
+		</script>
 	</head>
 
 	<body>
-        <!-- <a href="#" class="save">Save</a> -->
-        <form>
-    		<textarea id="text-editor" name="editor"></textarea>
-        </form>
-    <div id="preview"> </div>
+		<!-- <a href="#" class="save">Save</a> -->
+		<div class="border">
+			<ul>
+				<li class="clear"><a href="#modal-clear" class="call-modal"><span>&times;</span><em>Clear these notes</em></a></li>
+				<li class="info"><a href="#modal-info" class="call-modal"><span>?</span><em>sctrchpd.com info</em></a></li>
+			</ul>
+		</div>
+		<section class="writer">
+			<form>
+				<textarea id="text-editor" name="editor"></textarea>
+			</form>
+			<div id="preview"> </div>
+		</section>
+
+		<section class="semantic-content modal" id="modal-clear" tabindex="-1"
+        role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+		    <div class="modal-inner">
+		        <header id="modal-label"><!-- Header --></header>
+		        <div class="modal-content">
+		        	<h2>Clear Notes?</h2>
+		        	<p>Are you sure you want to clear your notes? (They will be lost forever)</p>
+
+		        </div>
+		        <footer>
+		        	<a href="#!" class="button clear-yes">Yes, I'm done with 'em!</a>
+		        	<a href="#!" class="clear-cancel">Cancel</a>
+		        </footer>
+		    </div>
+
+		    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+		        data-dismiss="modal">×</a>
+		</section>
+
+		<section class="semantic-content modal" id="modal-info" tabindex="-1"
+        role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+		    <div class="modal-inner">
+		        <header id="modal-label"><!-- Header --></header>
+		        <div class="modal-content">
+		        	<h2>What is scrtchpd?</h2>
+		        	<p>scrtchpd is a simple tool for quick note taking. <strong>Just start typing. </strong></p>
+		        	<ul>
+		        		<li>scrtchpd saves your notes in your browser, locally, so you don't need to worry about it.</li>
+		        		<li>scrtchpd works best when paired with the <a href="https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna">New Tab Redirect Chrome extension</a>. Just set up the extension to direct new tabs to scrtchpd.com and you'll have your notes available every time you open a new tab.</li>
+		        		<li>scrtchpd now supports live Markdown previews, to help organize your thoughts a bit easier. Check out the <a href="http://daringfireball.net/projects/markdown/">Markdown Documentation</a> for details. A few quick Examples:</li>
+	        		</ul>
+	        		<blockquote>
+	        			<h1><span>#</span> Headline</h1>
+	        			<h2><span>##</span> Secondary Headline</h2>
+	        			<p><span>**</span><strong>Bold</strong><span>**</span> or <span>_</span><em>Italic</em><span>_</span></p>
+						<p><span>*</span> List item</p>
+						<p><span>1.</span> Numbered list item</p>
+	        		</blockquote>
+		        </div>
+		        <footer>
+		        	<p>A <a href="http://www.havesomecottlestonpie.com">Cottleston Pie</a> adventure.
+		        		<br />
+		        		Questions, comments? Send me a (friendly) email at <a href="mailto:dave@iamdavedawson.com">dave@iamdavedawson.com</a></p>
+		        </footer>
+		    </div>
+
+		    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+		        data-dismiss="modal">×</a>
+		</section>
+		<script src="_/j/source.js"></script>
+		<!--
+		<script src="_/j/codemirror.js"></script>
+		<script src="_/j/plugins-wide.js"></script>
+		<script src="_/j/localstorage.js"></script>
+		<script src="_/j/markdown.js"></script>
+
+		<script src="_/j/highlight.pack.js"></script>
+		<script src="_/j/show-hint.js"></script>
+		<script src="_/j/javascript-hint.js"></script>
+
+		<script src="_/j/modal.js"></script>
+		<script src="_/j/jquery.cookie.js"></script>
+
+	-->
+		<script src="_/j/index.js"></script>
+		<script type="text/javascript" src="//use.typekit.net/jco5ygc.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<script type="text/javascript">
 
 		  var _gaq = _gaq || [];
@@ -41,9 +117,9 @@
 		  _gaq.push(['_trackPageview']);
 
 		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 
 		</script>

@@ -2,7 +2,6 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,69 +23,71 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 2, ../../../sass/partials/layout.scss */
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 3, ../../../sass/partials/layout.scss */
 body {
-  background: #eee;
-  font: normal 28px/38px "pt-sans", Georgia, "Times New Roman", serif;
+  background: rgba(231, 232, 226, 0.5);
+  font: normal 24px/28px "pt-sans", Georgia, "Times New Roman", serif;
 }
 
-/* line 7, ../../../sass/partials/layout.scss */
 html, body, form, #preview {
   height: 100%;
 }
 
-/* line 10, ../../../sass/partials/layout.scss */
 textarea, #preview, .CodeMirror {
-  background: #cccccc;
+  background: #fff;
   color: #333;
   border: 0;
   padding: 0;
@@ -97,69 +98,169 @@ textarea, #preview, .CodeMirror {
   box-sizing: border-box;
 }
 
-/* line 21, ../../../sass/partials/layout.scss */
+#preview {
+  display: none;
+}
+
 textarea:focus {
   outline: 0;
   outline: none;
 }
 
-/* line 25, ../../../sass/partials/layout.scss */
 textarea {
-  opacity: 0.1;
+  opacity: 0;
   position: relative;
   z-index: 2;
 }
 
+.sidebar {
+  float: left;
+  width: 29%;
+  height: 100%;
+  display: none;
+}
+
+.writer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+  -webkit-animation: fadein 1s;
+  /* Safari and Chrome */
+  -moz-animation: fadein 1s;
+  /* Firefox */
+  -ms-animation: fadein 1s;
+  /* Internet Explorer */
+  -o-animation: fadein 1s;
+  /* Opera */
+  animation: fadein 1s;
+}
+@media only screen and (min-width: 641px) and (max-width: 971px) {
+  .writer {
+    width: 95%;
+    float: right;
+  }
+}
+@media only screen and (min-width: 972px) {
+  .writer {
+    width: 97%;
+    float: right;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* BASICS */
-/* line 34, ../../../sass/partials/layout.scss */
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   /* font-family: monospace; */
-  font: normal 28px/38px "pt-sans", Georgia, "Times New Roman", serif;
+  line-height: 18px !important;
   height: 100%;
-  height: auto;
-  padding: 2em 150px;
+  padding: 0em 5% 0em 0;
   color: #272f35;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
 }
 
-/* line 43, ../../../sass/partials/layout.scss */
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
   overflow: auto;
   overflow-x: auto;
   overflow-y: hidden;
+  height: 100%;
 }
 
 /* PADDING */
-/* line 51, ../../../sass/partials/layout.scss */
 .CodeMirror-lines {
-  padding: 4px 0;
+  padding: 2em 0;
   /* Vertical padding around content */
+  width: 100%;
+  height: 100%;
+  background: #fefffd;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+@media only screen and (min-width: 972px) {
+  .CodeMirror-lines {
+    width: 90%;
+    max-width: 1100px;
+  }
 }
 
-/* line 54, ../../../sass/partials/layout.scss */
 .CodeMirror pre {
-  padding: 0 100px;
+  padding: 0 5%;
   /* Horizontal padding of content */
   margin-bottom: 5px;
   position: relative;
+  font: normal 16px/21px "pt-sans", Georgia, "Times New Roman", serif;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+@media only screen and (min-width: 641px) and (max-width: 971px) {
+  .CodeMirror pre {
+    padding: 0 15%;
+    font: normal 18px/24px "pt-sans", Georgia, "Times New Roman", serif;
+  }
+}
+@media only screen and (min-width: 972px) {
+  .CodeMirror pre {
+    padding: 0 10%;
+    font: normal 20px/28px "pt-sans", Georgia, "Times New Roman", serif;
+  }
 }
 
-/* line 60, ../../../sass/partials/layout.scss */
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
   background-color: white;
   /* The little square between H and V scrollbars */
 }
 
 /* GUTTER */
-/* line 66, ../../../sass/partials/layout.scss */
 .CodeMirror-gutters {
   border-right: 1px solid #ddd;
   background-color: #f7f7f7;
   white-space: nowrap;
 }
 
-/* line 72, ../../../sass/partials/layout.scss */
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
@@ -168,19 +269,16 @@ textarea {
 }
 
 /* CURSOR */
-/* line 81, ../../../sass/partials/layout.scss */
 .CodeMirror div.CodeMirror-cursor {
   border-left: 1px solid black;
   z-index: 3;
 }
 
 /* Shown when moving in bi-directional text */
-/* line 86, ../../../sass/partials/layout.scss */
 .CodeMirror div.CodeMirror-secondarycursor {
   border-left: 1px solid silver;
 }
 
-/* line 89, ../../../sass/partials/layout.scss */
 .CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
   width: auto;
   border: 0;
@@ -189,172 +287,187 @@ textarea {
 }
 
 /* Can style cursor different in overwrite (non-insert) mode */
-/* line 98, ../../../sass/partials/layout.scss */
 .cm-tab {
   display: inline-block;
 }
 
-/* line 100, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-formatting {
-  opacity: .5;
+  opacity: .3;
 }
 
 /* DEFAULT THEME */
-/* line 106, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-keyword {
   color: #272f35;
 }
 
-/* line 107, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-atom {
   color: #272f35;
 }
 
-/* line 108, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-number {
   color: #272f35;
 }
 
-/* line 109, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-def {
   color: #272f35;
 }
 
-/* line 110, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-variable {
   color: #272f35;
 }
 
-/* line 111, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-variable-2 {
   color: #272f35;
 }
 
-/* line 112, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-variable-3 {
   color: #272f35;
 }
 
-/* line 113, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-property {
   color: #272f35;
 }
 
-/* line 114, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-operator {
   color: #272f35;
 }
 
-/* line 115, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-comment {
   color: #272f35;
 }
 
-/* line 116, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-string {
   color: #272f35;
 }
 
-/* line 117, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-string-2 {
   color: #272f35;
 }
 
-/* line 118, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-meta {
   color: #272f35;
 }
 
-/* line 119, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-qualifier {
   color: #272f35;
 }
 
-/* line 120, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-builtin {
   color: #272f35;
 }
 
-/* line 121, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-bracket {
   color: #272f35;
 }
 
-/* line 122, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-tag {
   color: #272f35;
 }
 
-/* line 123, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-attribute {
   color: #272f35;
 }
 
-/* line 124, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-header {
   color: #272f35;
 }
 
-/* line 129, ../../../sass/partials/layout.scss */
 .cm-formatting-header {
   font-size: 28px !important;
   margin: 0 !important;
   letter-spacing: 0 !important;
+  display: inline-block !important;
+  text-align: right;
+  position: relative !important;
 }
 
-/* line 144, ../../../sass/partials/layout.scss */
+.cm-header-wrap {
+  text-indent: -4em;
+}
+
+.cm-header {
+  position: relative;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
 .cm-header1 {
-  margin: 1em 0 0.8em;
-  font-size: 42px;
+  margin: 2em 0 0.8em !important;
+  font-size: 30px;
+}
+@media only screen and (min-width: 972px) {
+  .cm-header1 {
+    margin: 2em 0 0.8em !important;
+    font-size: 42px;
+  }
 }
 
-/* line 149, ../../../sass/partials/layout.scss */
 .cm-header2 {
-  margin: 1em 0 0.8em;
-  font-size: 36px;
+  margin: 1em 0 0.8em !important;
+  font-size: 20px;
+}
+@media only screen and (min-width: 972px) {
+  .cm-header2 {
+    font-size: 36px;
+  }
 }
 
-/* line 154, ../../../sass/partials/layout.scss */
 .cm-header3 {
-  margin: 1em 0 0.8em;
-  font-size: 28px;
+  margin: 0.5em 0 0.8em !important;
+  font-size: 18px;
+}
+@media only screen and (min-width: 972px) {
+  .cm-header3 {
+    font-size: 28px;
+  }
 }
 
-/* line 159, ../../../sass/partials/layout.scss */
 .cm-header4 {
   margin: 1em 0 0.8em;
-  font-size: 22px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+@media only screen and (min-width: 972px) {
+  .cm-header4 {
+    font-size: 22px;
+  }
+}
 
-/* line 166, ../../../sass/partials/layout.scss */
 .cm-header5 {
-  margin: 1em 0 0.8em;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* line 173, ../../../sass/partials/layout.scss */
-.cm-header6 {
   margin: 1em 0 0.8em;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+@media only screen and (min-width: 972px) {
+  .cm-header5 {
+    font-size: 18px;
+  }
+}
 
-/* line 182, ../../../sass/partials/layout.scss */
+.cm-header6 {
+  margin: 1em 0 0.8em;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+@media only screen and (min-width: 972px) {
+  .cm-header6 {
+    font-size: 14px;
+  }
+}
+
 .cm-formatting-link {
   text-decoration: none !important;
 }
 
-/* line 188, ../../../sass/partials/layout.scss */
 .cm-formatting-quote {
   border: 0 !important;
 }
 
-/* line 191, ../../../sass/partials/layout.scss */
 .cm-atom {
   display: inline-block;
   padding-left: 15%;
@@ -364,67 +477,54 @@ textarea {
   color: #3d4952 !important;
 }
 
-/* line 199, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-quote {
   color: #090;
 }
 
-/* line 200, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-hr {
   color: #999;
 }
 
-/* line 201, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-link {
   color: black;
 }
 
-/* line 203, ../../../sass/partials/layout.scss */
 .cm-negative {
   color: #d44;
 }
 
-/* line 204, ../../../sass/partials/layout.scss */
 .cm-positive {
   color: #292;
 }
 
-/* line 205, ../../../sass/partials/layout.scss */
 .cm-header, .cm-strong {
   font-weight: bold;
 }
 
-/* line 206, ../../../sass/partials/layout.scss */
 .cm-em {
   font-style: italic;
 }
 
-/* line 207, ../../../sass/partials/layout.scss */
 .cm-link {
   text-decoration: underline;
 }
 
-/* line 209, ../../../sass/partials/layout.scss */
 .cm-s-default .cm-error {
   color: #f00;
 }
 
-/* line 210, ../../../sass/partials/layout.scss */
 .cm-invalidchar {
   color: #f00;
 }
 
-/* line 212, ../../../sass/partials/layout.scss */
 div.CodeMirror span.CodeMirror-matchingbracket {
   color: #0f0;
 }
 
-/* line 213, ../../../sass/partials/layout.scss */
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: #f22;
 }
 
-/* line 214, ../../../sass/partials/layout.scss */
 .CodeMirror-activeline-background {
   background: #e8f2ff;
 }
@@ -432,15 +532,13 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* STOP */
 /* The rest of this file contains styles related to the mechanics of
    the editor. You probably shouldn't touch them. */
-/* line 221, ../../../sass/partials/layout.scss */
 .CodeMirror {
   line-height: 1;
   position: relative;
   overflow: hidden;
-  background: #cccccc url(/_/i/scrtchpd-logo.png) center 1em no-repeat;
+  background: rgba(231, 232, 226, 0.1);
 }
 
-/* line 228, ../../../sass/partials/layout.scss */
 .CodeMirror-scroll {
   /* 30px is the magic margin used to hide the element's real scrollbars */
   /* See overflow: hidden in .CodeMirror */
@@ -455,23 +553,29 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+@media only screen and (max-width: 640px) {
+  .CodeMirror-scroll {
+    padding-right: 0px;
+  }
+}
 
-/* line 239, ../../../sass/partials/layout.scss */
 .CodeMirror-sizer {
   position: relative;
+  height: 100%;
+}
+.CodeMirror-sizer div:first-child {
+  height: 100%;
 }
 
 /* The fake, visible scrollbars. Used to force redraw during scrolling
    before actuall scrolling happens, thus preventing shaking and
    flickering artifacts. */
-/* line 246, ../../../sass/partials/layout.scss */
 .CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
   position: absolute;
   z-index: 6;
   display: none;
 }
 
-/* line 251, ../../../sass/partials/layout.scss */
 .CodeMirror-vscrollbar {
   right: 0;
   top: 0;
@@ -479,7 +583,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-y: scroll;
 }
 
-/* line 256, ../../../sass/partials/layout.scss */
 .CodeMirror-hscrollbar {
   bottom: 0;
   left: 0;
@@ -487,19 +590,16 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-x: scroll;
 }
 
-/* line 261, ../../../sass/partials/layout.scss */
 .CodeMirror-scrollbar-filler {
   right: 0;
   bottom: 0;
 }
 
-/* line 264, ../../../sass/partials/layout.scss */
 .CodeMirror-gutter-filler {
   left: 0;
   bottom: 0;
 }
 
-/* line 268, ../../../sass/partials/layout.scss */
 .CodeMirror-gutters {
   position: absolute;
   left: 0;
@@ -508,7 +608,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 3;
 }
 
-/* line 273, ../../../sass/partials/layout.scss */
 .CodeMirror-gutter {
   white-space: normal;
   height: 100%;
@@ -522,20 +621,17 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   *display: inline;
 }
 
-/* line 285, ../../../sass/partials/layout.scss */
 .CodeMirror-gutter-elt {
   position: absolute;
   cursor: default;
   z-index: 4;
 }
 
-/* line 291, ../../../sass/partials/layout.scss */
 .CodeMirror-lines {
   cursor: text;
   line-height: 38px;
 }
 
-/* line 295, ../../../sass/partials/layout.scss */
 .CodeMirror pre {
   /* Reset some styles that the rest of the page might have set */
   -moz-border-radius: 0;
@@ -543,26 +639,21 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   border-radius: 0;
   border-width: 0;
   background: transparent;
-  font-family: inherit;
-  font-size: inherit;
   margin: 0;
   white-space: pre;
   word-wrap: normal;
-  line-height: inherit;
   color: inherit;
   z-index: 2;
   position: relative;
   overflow: visible;
 }
 
-/* line 311, ../../../sass/partials/layout.scss */
 .CodeMirror-wrap pre {
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: normal;
 }
 
-/* line 316, ../../../sass/partials/layout.scss */
 .CodeMirror-code pre {
   border-right: 30px solid transparent;
   width: -webkit-fit-content;
@@ -570,13 +661,11 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: fit-content;
 }
 
-/* line 322, ../../../sass/partials/layout.scss */
 .CodeMirror-wrap .CodeMirror-code pre {
   border-right: none;
   width: auto;
 }
 
-/* line 326, ../../../sass/partials/layout.scss */
 .CodeMirror-linebackground {
   position: absolute;
   left: 0;
@@ -586,19 +675,16 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 0;
 }
 
-/* line 332, ../../../sass/partials/layout.scss */
 .CodeMirror-linewidget {
   position: relative;
   z-index: 2;
   overflow: auto;
 }
 
-/* line 340, ../../../sass/partials/layout.scss */
 .CodeMirror-wrap .CodeMirror-scroll {
   overflow-x: hidden;
 }
 
-/* line 344, ../../../sass/partials/layout.scss */
 .CodeMirror-measure {
   position: absolute;
   width: 100%;
@@ -607,12 +693,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   visibility: hidden;
 }
 
-/* line 351, ../../../sass/partials/layout.scss */
 .CodeMirror-measure pre {
   position: static;
 }
 
-/* line 353, ../../../sass/partials/layout.scss */
 .CodeMirror div.CodeMirror-cursor {
   position: absolute;
   visibility: hidden;
@@ -620,46 +704,87 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   width: 0;
 }
 
-/* line 359, ../../../sass/partials/layout.scss */
 .CodeMirror-focused div.CodeMirror-cursor {
   visibility: visible;
 }
 
-/* line 363, ../../../sass/partials/layout.scss */
 .CodeMirror-selected {
   background: #d9d9d9;
 }
 
-/* line 364, ../../../sass/partials/layout.scss */
 .CodeMirror-focused .CodeMirror-selected {
   background: #d7d4f0;
 }
 
-/* line 366, ../../../sass/partials/layout.scss */
 .cm-searching {
   background: #ffa;
   background: rgba(255, 255, 0, 0.4);
 }
 
 /* IE7 hack to prevent it from returning funny offsetTops on the spans */
-/* line 372, ../../../sass/partials/layout.scss */
 .CodeMirror span {
   *vertical-align: text-bottom;
 }
 
 @media print {
   /* Hide the cursor when printing */
-  /* line 376, ../../../sass/partials/layout.scss */
   .CodeMirror div.CodeMirror-cursor {
     visibility: hidden;
   }
 }
+body {
+  font-size: 16pz;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #272f35;
+  font-weight: bold;
+}
+
+ul, ol {
+  margin: 20px 0;
+}
+ul li, ol li {
+  list-style-type: disc;
+  margin-left: 30px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 25px;
+}
+blockquote span {
+  opacity: 0.3;
+}
+blockquote h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+blockquote h2 {
+  font-size: 24px;
+}
+
 /*
 
 Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
 
 */
-/* line 17, ../../../sass/partials/type.scss */
 pre code,
 pre .subst,
 pre .tag .title,
@@ -669,7 +794,6 @@ pre .nginx .title {
   color: #272f35;
 }
 
-/* line 48, ../../../sass/partials/type.scss */
 pre .string,
 pre .title,
 pre .constant,
@@ -701,7 +825,6 @@ pre .coffeescript .attribute {
   color: #272f35;
 }
 
-/* line 59, ../../../sass/partials/type.scss */
 pre .smartquote,
 pre .comment,
 pre .annotation,
@@ -713,7 +836,6 @@ pre .markdown .blockquote {
   color: #272f35;
 }
 
-/* line 77, ../../../sass/partials/type.scss */
 pre .number,
 pre .date,
 pre .regexp,
@@ -732,7 +854,6 @@ pre .markdown .link_url {
   color: #272f35;
 }
 
-/* line 109, ../../../sass/partials/type.scss */
 pre .label,
 pre .javadoc,
 pre .ruby .string,
@@ -765,7 +886,6 @@ pre .makefile .phony {
   color: #272f35;
 }
 
-/* line 131, ../../../sass/partials/type.scss */
 pre .keyword,
 pre .id,
 pre .title,
@@ -788,18 +908,15 @@ pre .status {
   font-weight: bold;
 }
 
-/* line 136, ../../../sass/partials/type.scss */
 pre .asciidoc .emphasis,
 pre .markdown .emphasis {
   font-style: italic;
 }
 
-/* line 140, ../../../sass/partials/type.scss */
 pre .nginx .built_in {
   font-weight: normal;
 }
 
-/* line 151, ../../../sass/partials/type.scss */
 pre .coffeescript .javascript,
 pre .javascript .xml,
 pre .lasso .markup,
@@ -809,4 +926,374 @@ pre .xml .vbscript,
 pre .xml .css,
 pre .xml .cdata {
   opacity: 0.5;
+}
+
+.border {
+  overflow: visible;
+  position: fixed;
+  height: 100%;
+  float: left;
+  background: #1e2124;
+  z-index: 2;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+@media only screen and (min-width: 641px) and (max-width: 971px) {
+  .border {
+    width: 5%;
+  }
+}
+@media only screen and (min-width: 972px) {
+  .border {
+    width: 3%;
+  }
+}
+.border ul {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+}
+.border li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.border .clear a {
+  font-size: 18px;
+}
+.border .clear a em {
+  width: 190px;
+  font-weight: normal;
+}
+.border .info a {
+  font-size: 14px;
+}
+.border .info a em {
+  width: 195px;
+}
+.border a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  margin: 0 auto;
+  clear: both;
+  padding: 5px 10px;
+  overflow: visible !important;
+  text-align: center;
+  overflow: hidden;
+  *zoom: 1;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+.border a:hover {
+  background: #272f35;
+}
+.border a span {
+  display: block;
+  width: 14px;
+  height: 25px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+.border a em {
+  font-style: normal;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px 5px 5px 50px;
+  font-size: 16px;
+  z-index: 4;
+  opacity: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+@media only screen and (min-width: 641px) and (max-width: 971px) {
+  .border a em {
+    left: 30px;
+  }
+}
+.border a:hover em {
+  display: block;
+  background: #272f35;
+  opacity: 1;
+}
+
+/**
+ * CSS Modal
+ * Modal as reusable module
+ * http://drublic.github.com/css-modal
+ *
+ * @author Hans Christian Reinl - @drublic
+ * @version 1.0.4
+ *
+ * Usage:
+ *    selector {
+ *        @extend %modal;
+ *    }
+ */
+/*
+ * Configuration
+ */
+html {
+  overflow-y: scroll;
+}
+
+.has-overlay {
+  overflow: hidden;
+}
+.has-overlay > body {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.semantic-content {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 0;
+  color: #222;
+  line-height: 1.3;
+  display: none\9;
+}
+.semantic-content:target {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.is-active.semantic-content {
+  display: block\9;
+}
+.semantic-content:target {
+  display: block\9;
+}
+.semantic-content .modal-inner {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  z-index: 20;
+  margin-left: -325px;
+  width: 650px;
+  overflow-x: hidden;
+  background: #fff;
+}
+.semantic-content .modal-inner > img,
+.semantic-content .modal-inner > video,
+.semantic-content .modal-inner > iframe {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+}
+.semantic-content .modal-inner > img {
+  width: auto;
+  max-width: 100%;
+}
+.semantic-content header {
+  border-bottom: 1px solid #dddddd;
+  padding: 0 1.2em;
+}
+.semantic-content header > h2 {
+  margin: 0.5em 0;
+}
+.semantic-content .modal-content {
+  max-height: 400px;
+  max-height: 70vh;
+  border-bottom: 1px solid #dddddd;
+  padding: 2em 5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.semantic-content .modal-content > * {
+  max-width: 100%;
+}
+.semantic-content footer {
+  padding: 1em 5% 1em;
+  background: #f0f0f0;
+}
+.semantic-content .modal-close {
+  display: block;
+  text-indent: -100px;
+  overflow: hidden;
+  font-size: 22px;
+}
+.semantic-content .modal-close:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+}
+.semantic-content .modal-close:after {
+  content: '\00d7';
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 20;
+  margin-left: 285px;
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-indent: 0;
+}
+@media screen and (max-width: 690px) {
+  .semantic-content .modal-inner {
+    width: auto;
+    left: 20px;
+    right: 20px;
+    margin-left: 0;
+  }
+  .semantic-content .modal-close {
+    left: auto;
+    right: 33px;
+    margin-left: 0;
+  }
+  .semantic-content .modal-close:after {
+    margin-left: 40%;
+  }
+}
+@media screen and (max-width: 30em) {
+  .semantic-content {
+    -webkit-transform: translate(0, 400px);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition: -webkit-transform .25s ease-in-out, opacity 1ms .25s;
+    -moz-transition: -moz-transform .25s ease-in-out, opacity 1ms .25s;
+    -o-transition: -o-transform .25s ease-in-out, opacity 1ms .25s;
+    -ms-transition: -ms-transform .25s ease-in-out, opacity 1ms .25s;
+    transition: transform .25s ease-in-out, opacity 1ms .25s;
+    display: block;
+    height: 100%;
+    bottom: auto;
+  }
+  .semantic-content:target {
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+    -moz-transition: -moz-transform .25s ease-in-out;
+    -o-transition: -o-transform .25s ease-in-out;
+    -ms-transition: -ms-transform .25s ease-in-out;
+    transition: transform .25s ease-in-out;
+  }
+  .semantic-content:before {
+    background-color: #1e2124;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    height: 3em;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  }
+  .semantic-content .modal-inner {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 3em;
+    height: 100%;
+    overflow: scroll;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .semantic-content .modal-content {
+    max-height: none;
+  }
+  .semantic-content .modal-close {
+    right: auto;
+    text-decoration: none;
+  }
+  .semantic-content .modal-close:before {
+    display: none;
+  }
+  .semantic-content .modal-close:after {
+    content: attr(data-close);
+    top: 0.4em;
+    left: 1em;
+    z-index: 40;
+    margin-left: 0;
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+}
+@media screen and (max-height: 46em) and (min-width: 30em) {
+  .semantic-content .modal-content {
+    max-height: 340px;
+    max-height: 50vh;
+  }
+}
+@media screen and (max-height: 36em) and (min-width: 30em) {
+  .semantic-content .modal-content {
+    max-height: 265px;
+    max-height: 40vh;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .semantic-content {
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+  }
+}
+
+.modal {
+  font-size: 16px;
+}
+.modal h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+.modal a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #272f35;
+}
+.modal li {
+  margin-bottom: 5px;
+}
+
+.modal.initial {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.modal footer .clear-cancel {
+  text-align: right;
+  float: right;
 }

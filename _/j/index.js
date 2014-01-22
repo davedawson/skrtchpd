@@ -1,5 +1,6 @@
 function inputFocus(){
-	jQuery('#content').focus();
+	// jQuery('#content').focus();
+  jQuery('.CodeMirror').addClass('CodeMirror-focused');
 }
 
 function autoSave(){
@@ -47,14 +48,29 @@ function codeEditor(){
     },
     lineNumbers: false,
     lineWrapping: true,
-    // autofocus: true,
+    autofocus: true,
     extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"},
     // onLoad: onLoadEditor()
     });
 
+    // Clear Editor
+    $('.clear-yes').on('click', function(){
+      editor.setValue("");
+      editor.clearHistory();
+      $('.modal').removeClass('initial');
+      inputFocus();
+      // console.log('clear!');
+    });
     editor.on("keyup", function() {
       editor.save();
       // console.log('saved to textarea');
+
+      // Add wrapper elements
+
+      if ($(".cm-formatting-header").length > 0) {
+        // $(".cm-formatting-header").parent().addClass('cm-header-wrap');
+        // console.log(this + 'exists');
+      }
     });
 
     $('.save').click(function(){
@@ -64,9 +80,50 @@ function codeEditor(){
     });
   }
 
+function setCookie(){
+    if($.cookie('_scrtchpd') === 'true') {
+      // Do nothing, the cookie exists
+
+    } else {
+      // Set the cookie and add the initial class
+      $.cookie('_scrtchpd', 'true', { expires: 500 });
+      $('#modal-info').addClass('initial');
+    }
+
+  // $.cookie('newscrtchpd', 'Cookie Set', { expires: 500 });
+    $('.modal-close').on('click', function(){
+     $('#modal-info').removeClass('initial');
+     inputFocus();
+     // console.log('close');
+    });
+}
+
+function keepUrl(){
+  $('.call-modal').on('click', function(e){
+    e.preventDefault();
+
+  });
+}
+
+function modal(){
+  $('.call-modal').on('click', function(e){
+    var modalID = $(this).attr('href');
+    $(modalID).addClass('initial');
+    // console.log(modalID);
+  });
+  $('.modal-close, .clear-cancel').on('click', function(){
+   $('.modal').removeClass('initial');
+   inputFocus();
+   // console.log('close');
+  });
+}
+
  jQuery(document).ready(function() {
   	inputFocus();
     autoSave();
+    setCookie();
+    keepUrl();
+    modal();
   });
  $(window).bind("load", function() {
      codeEditor();

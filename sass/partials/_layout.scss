@@ -1,14 +1,14 @@
 @import "partials/defaults";
 * { margin: 0; padding: 0; }
 body {
-  background: #eee;
-  font: normal 28px/38px $type-sans;
+  background: transparentize($color-bg, 0.5);
+  font: normal 24px/28px $type-sans;
 }
 html, body, form, #preview {
   height: 100%;
 }
 textarea, #preview, .CodeMirror {
-  background: $color-bg;
+  background: #fff;
   color: #333;
   border: 0;
   padding: 0;
@@ -18,43 +18,115 @@ textarea, #preview, .CodeMirror {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+#preview {
+  display: none;
+}
 textarea:focus {
   outline:0;
   outline:none;
 }
 textarea {
-    opacity: 0.1;
+    opacity: 0;
     position: relative;
     z-index: 2;
 }
 
+// Sidebar
+.sidebar {
+  float: left;
+  width: 29%;
+  height: 100%;
+  display: none;
+}
+
+// Writer
+.writer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  @include transition(all, 0.3s);
+  @include respond-to(medium-screens) {
+    width: 95%;
+    float: right;
+  }
+  @include respond-to(wide-screens) {
+    width: 97%;
+    float: right;
+  }
+      -webkit-animation: fadein 1s; /* Safari and Chrome */
+       -moz-animation: fadein 1s; /* Firefox */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera */
+            animation: fadein 1s;
+  // padding: 0 30%;
+  // border-left: 1px solid darken($color-bg, 5%);
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
 /* BASICS */
 
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   /* font-family: monospace; */
-  font: normal 28px/38px $type-sans;
+
+  line-height: 18px !important;
   height: 100%;
-  height: auto;
-  padding: 2em 150px;
+  padding: 0em 5% 0em 0;
   color: $color-text;
+  @include transition(all, 0.3s);
 }
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
   overflow: auto;
   overflow-x: auto; overflow-y: hidden;
+  height: 100%;
 }
-
 /* PADDING */
 
 .CodeMirror-lines {
-  padding: 4px 0; /* Vertical padding around content */
+  padding: 2em 0; /* Vertical padding around content */
+  width: 100%;
+  height: 100%;
+  background: #fefffd;
+
+  @include transition(all, 0.3s);
+  @include respond-to(wide-screens) {
+    width: 90%;
+    max-width: 1100px;
+  }
 }
 .CodeMirror pre {
-  padding: 0 100px; /* Horizontal padding of content */
+  padding: 0 5%; /* Horizontal padding of content */
   margin-bottom: 5px;
   position: relative;
+  font: normal 16px/21px $type-sans;
+  @include transition(all, 0.3s);
+  @include respond-to(medium-screens) {
+    padding: 0 15%;
+    font: normal 18px/24px $type-sans;
+  }
+  @include respond-to(wide-screens) {
+    padding: 0 10%;
+    font: normal 20px/28px $type-sans;
+  }
 }
 
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
@@ -98,7 +170,7 @@ textarea {
 .cm-tab { display: inline-block; }
 
 .cm-s-default .cm-formatting {
-  opacity:.5;
+  opacity:.3;
 }
 
 /* DEFAULT THEME */
@@ -139,42 +211,78 @@ textarea {
   // top: 0;
   margin: 0 !important;
   letter-spacing: 0 !important;
+  display: inline-block !important;
+  text-align: right;
+  position: relative !important;
+  // left: -100px;
+  // width: 100px;
+  // white-space: pre;
+  // width: 4em;
+  // text-indent: -4em;
   // margin-right: -100px !important;
 }
+.cm-header-wrap {
+  text-indent: -4em;
+}
+.cm-header {
+  position: relative;
+  // left: -100px;
+  @include transition(all, 0.3s)
+}
 .cm-header1 {
-  margin: 1em 0 0.8em;
-  font-size: 42px;
+  margin: 2em 0 0.8em !important;
+  font-size: 30px;
+
+  @include respond-to(wide-screens) {
+    margin: 2em 0 0.8em !important;
+    font-size: 42px;
+  }
   // margin-left: -1em;
 }
 .cm-header2 {
-  margin: 1em 0 0.8em;
-  font-size: 36px;
+  margin: 1em 0 0.8em !important;
+  font-size: 20px;
+  @include respond-to(wide-screens) {
+    font-size: 36px;
+  }
   // margin-left: -1em;
 }
 .cm-header3 {
-  margin: 1em 0 0.8em;
-  font-size: 28px;
-  // margin-left: -1em;
+  margin: 0.5em 0 0.8em !important;
+  font-size: 18px;
+  @include respond-to(wide-screens) {
+    font-size: 28px;
+  }
+
 }
 .cm-header4 {
   margin: 1em 0 0.8em;
-  font-size: 22px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  @include respond-to(wide-screens) {
+    font-size: 22px;
+  }
   // margin-left: -1em;
 }
 .cm-header5 {
   margin: 1em 0 0.8em;
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  @include respond-to(wide-screens) {
+    font-size: 18px;
+  }
   // margin-left: -1em;
 }
 .cm-header6 {
   margin: 1em 0 0.8em;
-  font-size: 14px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  @include respond-to(wide-screens) {
+    font-size: 14px;
+  }
   // margin-left: -1em;
 }
 
@@ -196,6 +304,12 @@ textarea {
   line-height: 24px !important;
   color: lighten($color-text, 10%) !important;
 }
+
+// Lists
+.cm-formatting-list {
+
+}
+
 .cm-s-default .cm-quote {color: #090;}
 .cm-s-default .cm-hr {color: #999;}
 .cm-s-default .cm-link {color: darken($color-text, 80%);}
@@ -222,7 +336,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   line-height: 1;
   position: relative;
   overflow: hidden;
-  background: $color-bg url(/_/i/scrtchpd-logo.png) center 1em no-repeat;
+  background: transparentize($color-bg, 0.9);
 }
 
 .CodeMirror-scroll {
@@ -230,6 +344,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   /* See overflow: hidden in .CodeMirror */
   margin-bottom: -30px; margin-right: -30px;
   padding-bottom: 30px; padding-right: 30px;
+  @include respond-to(handhelds) {
+    padding-right: 0px;
+  }
   height: 100%;
   outline: none; /* Prevent dragging from highlighting the element */
   position: relative;
@@ -238,6 +355,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 }
 .CodeMirror-sizer {
   position: relative;
+  height: 100%;
+  div:first-child {
+    height: 100%;
+  }
 }
 
 /* The fake, visible scrollbars. Used to force redraw during scrolling
@@ -297,12 +418,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
   border-width: 0;
   background: transparent;
-  font-family: inherit;
-  font-size: inherit;
+  // font-family: inherit;
+  // font-size: inherit;
   margin: 0;
   white-space: pre;
   word-wrap: normal;
-  line-height: inherit;
+  // line-height: inherit;
   color: inherit;
   z-index: 2;
   position: relative;
@@ -313,6 +434,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   white-space: pre-wrap;
   word-break: normal;
 }
+.CodeMirror-code {}
 .CodeMirror-code pre {
   border-right: 30px solid transparent;
   width: -webkit-fit-content;
